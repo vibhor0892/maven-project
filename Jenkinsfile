@@ -30,7 +30,7 @@ stages {
       steps sh 'scp -i /home/vibhor/Downloads/tomcat.pem **/target/*.war ec2-user@$(params.tomcat-dev):/var/lib/tomcat8/webapps'
      }
     }
-    stage (Deploy to Prod) {
+    stage ('Deploy to Prod') {
       steps {
         sh 'scp -i /home/vibhor/Downloads/tomcat.pem **/target/*.war ec2-user@$(params.tomcat-prod):/var/lib/tomcat8/webapps'
       }
